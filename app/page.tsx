@@ -506,7 +506,7 @@ export default function Home() {
           >
             {faqs.map((item, i) => (
               <AccordionItem key={i} value={`item-${i + 1}`}>
-                <AccordionTrigger className="text-[18px] leading-[28px] font-medium text-[#181D27] [&_svg]:text-[#A4A7AE]">
+                <AccordionTrigger className="text-[18px] leading-7 font-medium text-[#181D27] [&_svg]:text-[#A4A7AE]">
                   {item.q}
                 </AccordionTrigger>
                 <AccordionContent className="text-[16px] leading-6 text-[#535862]">
@@ -526,7 +526,7 @@ export default function Home() {
               friendly team.
             </p>
             <Button type="button" className="mt-8 w-[200px]">
-              Get started for free
+              Get in touch
             </Button>
           </div>
         </div>
