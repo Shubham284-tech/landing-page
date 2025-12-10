@@ -9,6 +9,7 @@ import {
     NavigationMenuItem,
     NavigationMenuLink,
 } from "@/components/ui/navigation-menu";
+import Link from "next/link";
 
 export function SiteHeader() {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -28,7 +29,7 @@ export function SiteHeader() {
             <div className="container mx-auto flex items-center justify-between">
 
                 {/* LOGO */}
-                <a href="/" aria-label="Homepage" className="flex items-center">
+                <Link href="/" aria-label="Homepage" className="flex items-center">
                     <Image
                         src="/assets/svg/ic_logo.svg"
                         alt="Logo"
@@ -37,7 +38,7 @@ export function SiteHeader() {
                         priority
                         className="h-auto w-auto"
                     />
-                </a>
+                </Link>
 
                 {/* NAVIGATION */}
                 <nav aria-label="Main navigation">
