@@ -83,7 +83,7 @@ export default function Home() {
                 >
                   <div className="rounded-xl shadow-[0_0_15px_0_#00000040]">
                     <Image
-                      src="/assets/img/ic_dashboard.jpg"
+                      src="/assets/img/ic_dashboard.png"
                       alt="dashboard_1"
                       width={660}
                       height={387}
@@ -94,7 +94,7 @@ export default function Home() {
             </CarouselContent>
           </Carousel>
           <div className="grid grid-cols-1 pt-15 md:pt-30 lg:grid-cols-2">
-            <div className="flex flex-col gap-0 md:gap-24">
+            <div className="flex flex-col gap-0 md:gap-20">
               <div className="mx-auto w-full px-6 sm:max-w-[650px] md:ps-0 lg:max-w-[526px]">
                 <h2 className="text-[36px] font-semibold text-[#1375BC] md:text-[48px]">
                   Sales leaders, you’re measuring the wrong metrics!
@@ -121,19 +121,19 @@ export default function Home() {
               />
               <div className="relative flex hidden justify-center lg:block">
                 <Image
-                  width={620}
-                  height={405}
+                  width={1394}
+                  height={930}
                   src="/assets/img/ic_mac_sales.png"
                   alt="Team Dashboard Laptop"
-                  className="w-full"
+                  className="w-[120%] max-w-[120%] relative z-1"
                 />
               </div>
             </div>
             <div className="relative flex hidden justify-center pt-15 lg:block lg:justify-end">
               <Image
-                width={620}
-                height={405}
-                src="/assets/img/ic_sales_dashboard.jpg"
+                width={1920}
+                height={2552}
+                src="/assets/img/ic_sales_dashboard.png"
                 alt="Member Profile Dashboard"
                 className="w-full rounded-2xl object-contain"
               />
@@ -264,7 +264,7 @@ export default function Home() {
               />
             </div>
           </div>
-          <div className="order-1 flex flex-col ps-8 lg:order-2 lg:ps-0">
+          <div className="order-1 flex flex-col px-8 lg:order-2 lg:ps-0">
             <p className="text-sm leading-6 font-medium text-[#5A5A5A] md:text-base">
               Step 02
             </p>
@@ -301,7 +301,7 @@ export default function Home() {
           </div>
         </div>
         <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
-          <div className="ps-8 lg:ps-22">
+          <div className="px-8 lg:ps-22">
             <p className="text-sm leading-6 font-medium text-[#5A5A5A] md:text-base">
               Step 03
             </p>
@@ -337,9 +337,9 @@ export default function Home() {
           </div>
           <div className="relative lg:mt-0">
             <div className="mr-auto w-full">
-              <div className="flex flex-col gap-12 rounded-[0px] border border-[#2DA9DF80] bg-[#F3F8FC] p-12 opacity-100 shadow-[0px_0px_30px_0px_#2DA9DF1A] lg:rounded-[24px]">
+              <div className="flex flex-col gap-12 rounded-[0px] border border-[#2DA9DF80] bg-[#F3F8FC] p-0 sm:p-12 opacity-100 shadow-[0px_0px_30px_0px_#2DA9DF1A] lg:rounded-[24px]">
                 <Image
-                  src={"/assets/img/ic_choose_level.jpg"}
+                  src={"/assets/img/ic_choose_levels.jpg"}
                   className="m-auto"
                   width={762}
                   height={472}
@@ -351,7 +351,7 @@ export default function Home() {
         </div>
         <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
           <div className="relative order-2 lg:order-1 lg:mt-0">
-            <div className="flex flex-col gap-12 rounded-[0px] border border-[#2DA9DF80] bg-[#F3F8FC] p-12 opacity-100 shadow-[0px_0px_30px_0px_#2DA9DF1A] lg:rounded-[24px]">
+            <div className="flex flex-col gap-12 rounded-[0px] border border-[#2DA9DF80] bg-[#F3F8FC] p-0 sm:p-12 opacity-100 shadow-[0px_0px_30px_0px_#2DA9DF1A] lg:rounded-[24px]">
               <Image
                 src={"/assets/img/ic_in_depth.jpg"}
                 className="m-auto"
@@ -361,7 +361,7 @@ export default function Home() {
               />
             </div>
           </div>
-          <div className="order-1 flex flex-col ps-8 lg:order-2 lg:ps-0">
+          <div className="order-1 flex flex-col px-8 lg:order-2 lg:ps-0">
             <p className="text-sm leading-6 font-medium text-[#5A5A5A] md:text-base">
               Step 04
             </p>

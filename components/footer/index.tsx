@@ -3,14 +3,14 @@ import { Button } from "../ui/button";
 
 export default function Footer(){
     return<footer className="bg-[#231F20] px-6 lg:px-0">
-      <div className="container mx-auto py-17">
-        <div className="grid grid-cols-2 border-b border-white items-center pb-10">
+      <div className="container px-4 mx-auto py-17">
+        <div className="grid grid-cols-2 border-b border-white items-center pb-10 gap-3">
           <div className="flex flex-col gap-2 w-full">
             <h2 className="text-white font-medium text-[20px] md:text-[32px] leading-[30px] md:leading-[46px]">Ready to Deliver the Perfect Pitch?</h2>
             <p className="font-normal sm:font-medium text-[12px] md:text-[20px] leading-[unset] sm:leading-[32px] text-[#AAAAAA]">Tailor your strategy to meet the specific needs of your target market.</p>
           </div>
           <div className="flex justify-end">
-            <Button type="button" variant="secondary" className="w-[168px]">
+            <Button type="button" variant="secondary" className="sm:w-[168px]">
               Get started
             </Button>
           </div>

@@ -26,7 +26,7 @@ export function SiteHeader() {
             className={`fixed hidden md:block inset-x-0 top-0 z-50 transition-all duration-300 ${isScrolled ? "bg-white shadow-sm py-3" : "bg-transparent py-5"
                 }`}
         >
-            <div className="container mx-auto flex items-center justify-between">
+            <div className="container px-4 mx-auto flex items-center justify-between">
 
                 {/* LOGO */}
                 <Link href="/" aria-label="Homepage" className="flex items-center">
