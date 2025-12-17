@@ -1,5 +1,8 @@
+"use client"
+
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Autoplay from "embla-carousel-autoplay"
 import {
   Carousel,
   CarouselContent,
@@ -14,6 +17,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import React from "react";
 const faqs = [
   {
     q: "Is there a free trial available?",
@@ -30,6 +34,9 @@ const faqs = [
 ];
 
 export default function Home() {
+  const plugin = React.useRef(
+    Autoplay({ delay: 2000, stopOnInteraction: true })
+  )
   return (
     <>
       <div className="relative min-h-screen overflow-hidden pt-8 before:absolute before:inset-0 before:-z-1 before:h-full before:bg-[url('/assets/img/ic_bg_sales_sec.png')] before:bg-cover before:bg-center before:bg-no-repeat before:content-[''] md:pt-[60px]">
@@ -72,11 +79,12 @@ export default function Home() {
             opts={{
               align: "start",
             }}
+            plugins={[plugin.current]}
             // orientation="vertical"
             className="w-full"
           >
             <CarouselContent className="ml-[10%] w-[100%] md:ml-[-20%] md:w-[140%]">
-              {[1, 2, 3, 4, 5].map((item, i) => (
+              {[1, 2, 3, 4, 5].map((_, i) => (
                 <CarouselItem
                   key={i}
                   className="basis-[70%] px-4 md:basis-[33%]"
@@ -489,7 +497,7 @@ export default function Home() {
           </Button>
         </div>
       </section>
-      <section className="px-6 py-10 md:px-0 md:py-20">
+      <section className="px-6 py-10 md:py-20">
         <div className="mx-auto max-w-[768px]">
           <div className="mb-12 text-center">
             <span className="text-sm leading-[20px] font-semibold text-[#1375BC] md:text-base">
