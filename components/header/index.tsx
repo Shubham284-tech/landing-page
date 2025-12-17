@@ -10,10 +10,12 @@ import {
     NavigationMenuLink,
 } from "@/components/ui/navigation-menu";
 import Link from "next/link";
+import { useRouter, useSearchParams } from "next/navigation";
+
 
 export function SiteHeader() {
     const [isScrolled, setIsScrolled] = useState(false);
-
+const router = useRouter();
     useEffect(() => {
         const onScroll = () => setIsScrolled(window.scrollY > 50);
         window.addEventListener("scroll", onScroll);
@@ -29,7 +31,7 @@ export function SiteHeader() {
             <div className="container px-4 mx-auto flex items-center justify-between">
 
                 {/* LOGO */}
-                <Link href="#" aria-label="Homepage" className="flex items-center">
+                <Link href="/" aria-label="Homepage" className="flex items-center">
                     <Image
                         src="/assets/svg/ic_logo.svg"
                         alt="Logo"
@@ -37,10 +39,7 @@ export function SiteHeader() {
                         height={40}
                         priority
                         className="h-auto w-auto"
-                          onClick={() => {
-              const section = document.getElementById("home");
-              section?.scrollIntoView({ behavior: "smooth" });
-            }}
+                          onClick={() => router.push("/")}
                     />
                 </Link>
 
@@ -71,15 +70,12 @@ export function SiteHeader() {
                                             {item}
                                         </button>
                                     ) : item === "Home" ? (
-                                        <button
-                                            onClick={() => {
-                                                const section = document.getElementById('home');
-                                                section?.scrollIntoView({ behavior: 'smooth' });
-                                            }}
-                                            className="hover:text-primary transition-colors text-[#5A5A5A] font-medium text-[18px] leading-[28px] cursor-pointer"
+                                        <NavigationMenuLink
+                                            href={`/`}
+                                            className="hover:text-primary transition-colors text-[#5A5A5A] font-medium text-[18px] leading-[28px]"
                                         >
                                             {item}
-                                        </button>
+                                        </NavigationMenuLink>
                                     ) 
                                     
                                     : (
