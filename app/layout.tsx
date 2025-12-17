@@ -1,18 +1,10 @@
 import type { Metadata, Viewport } from "next";
-// import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/header";
 import Footer from "@/components/footer";
-
-// const geistSans = Geist({
-//   variable: "--font-geist-sans",
-//   subsets: ["latin"],
-// });
-
-// const geistMono = Geist_Mono({
-//   variable: "--font-geist-mono",
-//   subsets: ["latin"],
-// });
+import { Suspense } from "react";
+import Loading from "@/components/loading/Loading";
+import Providers from "./providers";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -86,9 +78,11 @@ export default function RootLayout({
         style={{ fontFamily: "Acumin, sans-serif" }}
       >
         <SiteHeader />
-        <main className="pt-[0px] md:pt-[90px]">
-          {children}
-        </main>
+       <Providers>
+          <Suspense fallback={<Loading />}>
+            {children}
+          </Suspense>
+        </Providers>
         <Footer />
       </body>
     </html>
