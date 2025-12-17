@@ -1,5 +1,4 @@
 "use client"
-
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Autoplay from "embla-carousel-autoplay"
@@ -17,6 +16,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { SiteHeader } from "@/components/header";
+import Footer from "@/components/footer";
 import React from "react";
 const faqs = [
   {
@@ -39,16 +40,20 @@ export default function Home() {
   )
   return (
     <>
+    <SiteHeader />
       <div className="relative min-h-screen overflow-hidden pt-8 before:absolute before:inset-0 before:-z-1 before:h-full before:bg-[url('/assets/img/ic_bg_sales_sec.png')] before:bg-cover before:bg-center before:bg-no-repeat before:content-[''] md:pt-[60px]">
-        ``
         <Image
           src={"/assets/svg/ic_logo_small.svg"}
-          className="m-auto"
+          className="m-auto cursor-pointer"
           width={43}
           height={43}
           alt="logo"
+           onClick={() => {
+              const section = document.getElementById("home");
+              section?.scrollIntoView({ behavior: "smooth" });
+            }}
         />
-        <section className="m-auto max-w-[848px] px-8 pt-8 text-center md:px-0 md:pt-[60px]">
+        <section id="home" className="m-auto max-w-[848px] px-8 pt-8 text-center md:px-0 md:pt-[60px]">
           <div className="mx-auto mb-2 flex max-w-[190px] items-center justify-center rounded-[4px] bg-[linear-gradient(150.95deg,rgba(35,31,32,0.04)_-9.16%,rgba(45,169,223,0.04)_80.66%)]">
             <Image
               src={"/assets/svg/ic_ai_pitches.svg"}
@@ -70,7 +75,9 @@ export default function Home() {
             you practice your pitch, overcome objections, and master your
             delivery — before the real deal.
           </p>
-          <Button variant="secondary" type="button" className="w-[200px]">
+          <Button variant="secondary" type="button" className="w-[200px]"  onClick={() =>
+                window.open("https://dev.pperfectai.com", "_blank")
+              }>
             Try a Pitch Now
           </Button>
         </section>
@@ -150,7 +157,7 @@ export default function Home() {
         </section>
       </div>
       <section className="flex flex-col gap-15 overflow-hidden bg-white py-15 lg:gap-20 lg:py-32">
-        <div className="m-auto max-w-[768px] px-8 text-center lg:px-0">
+        <div id="howitworks" className="m-auto max-w-[768px] px-8 text-center lg:px-0">
           <span className="text-sm leading-[20px] font-semibold text-[#1375BC] md:text-base">
             Features
           </span>
@@ -203,7 +210,7 @@ export default function Home() {
           </div>
           <div className="relative lg:mt-0">
             <div className="mr-auto w-full">
-              <div className="flex flex-col gap-12 rounded-[0px] border border-[#2DA9DF80] bg-[#F3F8FC] p-12 opacity-100 shadow-[0px_0px_30px_0px_#2DA9DF1A] lg:rounded-[24px]">
+              <div className="flex flex-col gap-12 rounded-[0px] border border-[#2DA9DF80] bg-[#F3F8FC] p-12 opacity-100 shadow-[0px_0px_30px_0px_#2DA9DF1A] lg:rounded-l-3xl">
                 <Image
                   src={"/assets/svg/ic_logo_small.svg"}
                   className="m-auto"
@@ -247,7 +254,7 @@ export default function Home() {
         </div>
         <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
           <div className="relative order-2 lg:order-1 lg:mt-0">
-            <div className="flex flex-col gap-12 rounded-[0px] border border-[#2DA9DF80] bg-[#F3F8FC] p-12 opacity-100 shadow-[0px_0px_30px_0px_#2DA9DF1A] lg:rounded-[24px]">
+            <div className="flex flex-col gap-12 rounded-[0px] border border-[#2DA9DF80] bg-[#F3F8FC] p-12 opacity-100 shadow-[0px_0px_30px_0px_#2DA9DF1A] lg:rounded-r-3xl">
               <Image
                 src={"/assets/svg/ic_logo_small.svg"}
                 className="m-auto"
@@ -345,7 +352,7 @@ export default function Home() {
           </div>
           <div className="relative lg:mt-0">
             <div className="mr-auto w-full">
-              <div className="flex flex-col gap-12 rounded-[0px] border border-[#2DA9DF80] bg-[#F3F8FC] p-0 sm:p-12 opacity-100 shadow-[0px_0px_30px_0px_#2DA9DF1A] lg:rounded-[24px]">
+              <div className="flex flex-col gap-12 rounded-[0px] border border-[#2DA9DF80] bg-[#F3F8FC] p-0 sm:p-12 opacity-100 shadow-[0px_0px_30px_0px_#2DA9DF1A] lg:rounded-l-3xl">
                 <Image
                   src={"/assets/img/ic_choose_levels.jpg"}
                   className="m-auto"
@@ -359,7 +366,7 @@ export default function Home() {
         </div>
         <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
           <div className="relative order-2 lg:order-1 lg:mt-0">
-            <div className="flex flex-col gap-12 rounded-[0px] border border-[#2DA9DF80] bg-[#F3F8FC] p-0 sm:p-12 opacity-100 shadow-[0px_0px_30px_0px_#2DA9DF1A] lg:rounded-[24px]">
+            <div className="flex flex-col gap-12 rounded-[0px] border border-[#2DA9DF80] bg-[#F3F8FC] p-0 sm:p-12 opacity-100 shadow-[0px_0px_30px_0px_#2DA9DF1A] lg:rounded-r-3xl">
               <Image
                 src={"/assets/img/ic_in_depth.jpg"}
                 className="m-auto"
@@ -422,7 +429,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="flex flex-col gap-[20px] px-6 pt-10 pb-20 md:p-20">
+      <section id="testimonials" className="flex flex-col gap-[20px] px-6 pt-10 pb-20 md:p-20">
         <div className="m-auto max-w-[768px] text-center">
           <span className="text-sm leading-[20px] font-semibold text-[#1375BC] md:text-base">
             Testimonials
@@ -539,6 +546,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <Footer />
     </>
   );
 }
