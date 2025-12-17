@@ -1,8 +1,8 @@
 import type { Metadata, Viewport } from "next";
 // import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-// import { SiteHeader } from "@/components/header";
-// import Footer from "@/components/footer";
+import { SiteHeader } from "@/components/header";
+import Footer from "@/components/footer";
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -85,11 +85,11 @@ export default function RootLayout({
          antialiased`}
         style={{ fontFamily: "Acumin, sans-serif" }}
       >
-        {/* <SiteHeader /> */}
+        <SiteHeader />
         <main className="pt-[0px] md:pt-[90px]">
           {children}
         </main>
-        {/* <Footer /> */}
+        <Footer />
       </body>
     </html>
   );

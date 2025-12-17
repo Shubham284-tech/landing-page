@@ -17,7 +17,7 @@ const Page = () => {
   const filteredPlans = plans.find((plan) => plan[duration])?.[duration] || [];
   return (
     <>
-      <SiteHeader />
+      {/* <SiteHeader /> */}
       <div className="flex-center flex w-full">
         <div className="flex flex-col items-center gap-3">
           <div className="mt-15 mb-8">
@@ -114,7 +114,7 @@ const Page = () => {
          
         </div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };

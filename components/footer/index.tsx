@@ -48,19 +48,27 @@ export default function Footer() {
           <ul className="mt-6 flex flex-col items-start justify-start gap-4 sm:flex-row sm:items-center sm:gap-15 lg:mt-0 lg:justify-end xl:gap-20">
             <li
               className="cursor-pointer text-[12px] leading-[unset] font-normal text-white sm:text-[16px] sm:leading-[20px] sm:font-semibold"
-              onClick={() => {
-                const section = document.getElementById("howitworks");
-                section?.scrollIntoView({ behavior: "smooth" });
-              }}
+             onClick={() => {
+                          router.push("/#howitworks");
+                          setTimeout(() => {
+                            const section =
+                              document.getElementById("howitworks");
+                            section?.scrollIntoView({ behavior: "smooth" });
+                          }, 100);
+                        }}
             >
               How it works
             </li>
             <li
               className="cursor-pointer text-[12px] leading-[unset] font-normal text-white sm:text-[16px] sm:leading-[20px] sm:font-semibold"
-              onClick={() => {
-                const section = document.getElementById("testimonials");
-                section?.scrollIntoView({ behavior: "smooth" });
-              }}
+             onClick={() => {
+                          router.push("/#testimonials");
+                          setTimeout(() => {
+                            const section =
+                              document.getElementById("testimonials");
+                            section?.scrollIntoView({ behavior: "smooth" });
+                          }, 100);
+                        }}
             >
               Reviews
             </li>

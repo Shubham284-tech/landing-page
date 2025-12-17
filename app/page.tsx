@@ -15,8 +15,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { SiteHeader } from "@/components/header";
-import Footer from "@/components/footer";
 const faqs = [
   {
     q: "Is there a free trial available?",
@@ -35,7 +33,6 @@ const faqs = [
 export default function Home() {
   return (
     <>
-      <SiteHeader />
       <div className="relative min-h-screen overflow-hidden pt-8 before:absolute before:inset-0 before:-z-1 before:h-full before:bg-[url('/assets/img/ic_bg_sales_sec.png')] before:bg-cover before:bg-center before:bg-no-repeat before:content-[''] md:pt-[60px]">
         <Image
           src={"/assets/svg/ic_logo_small.svg"}
@@ -505,7 +502,11 @@ export default function Home() {
           <p className="pb-10 text-sm leading-6 font-medium text-white md:text-base">
             Ready to Deliver the Perfect Pitch?
           </p>
-          <Button type="button" className="w-[200px]">
+          <Button
+            type="button"
+            className="w-[200px]"
+            onClick={() => window.open("https://dev.pperfectai.com", "_blank")}
+          >
             Get started for free
           </Button>
         </div>
@@ -552,7 +553,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <Footer />
     </>
   );
 }
