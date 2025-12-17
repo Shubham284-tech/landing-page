@@ -29,7 +29,7 @@ export function SiteHeader() {
             <div className="container px-4 mx-auto flex items-center justify-between">
 
                 {/* LOGO */}
-                <Link href="/" aria-label="Homepage" className="flex items-center">
+                <Link href="#" aria-label="Homepage" className="flex items-center">
                     <Image
                         src="/assets/svg/ic_logo.svg"
                         alt="Logo"
@@ -37,6 +37,10 @@ export function SiteHeader() {
                         height={40}
                         priority
                         className="h-auto w-auto"
+                          onClick={() => {
+              const section = document.getElementById("home");
+              section?.scrollIntoView({ behavior: "smooth" });
+            }}
                     />
                 </Link>
 
@@ -44,14 +48,48 @@ export function SiteHeader() {
                 <nav aria-label="Main navigation">
                     <NavigationMenu>
                         <NavigationMenuList className="flex gap-8 text-base font-medium">
-                            {["Home", "About", "Services", "Contact"].map((item) => (
+                            {["Home", "How it works", "Reviews", "Pricing", "Contact Us"].map((item) => (
                                 <NavigationMenuItem key={item}>
-                                    <NavigationMenuLink
-                                        href={`/${item.toLowerCase()}`}
-                                        className="hover:text-primary transition-colors text-[#5A5A5A] font-medium text-[18px] leading-[28px]"
-                                    >
-                                        {item}
-                                    </NavigationMenuLink>
+                                    {item === "Reviews" ? (
+                                        <button
+                                            onClick={() => {
+                                                const section = document.getElementById('testimonials');
+                                                section?.scrollIntoView({ behavior: 'smooth' });
+                                            }}
+                                            className="hover:text-primary transition-colors text-[#5A5A5A] font-medium text-[18px] leading-[28px] cursor-pointer"
+                                        >
+                                            {item}
+                                        </button>
+                                    ) : item === "How it works" ? (
+                                        <button
+                                            onClick={() => {
+                                                const section = document.getElementById('howitworks');
+                                                section?.scrollIntoView({ behavior: 'smooth' });
+                                            }}
+                                            className="hover:text-primary transition-colors text-[#5A5A5A] font-medium text-[18px] leading-[28px] cursor-pointer"
+                                        >
+                                            {item}
+                                        </button>
+                                    ) : item === "Home" ? (
+                                        <button
+                                            onClick={() => {
+                                                const section = document.getElementById('home');
+                                                section?.scrollIntoView({ behavior: 'smooth' });
+                                            }}
+                                            className="hover:text-primary transition-colors text-[#5A5A5A] font-medium text-[18px] leading-[28px] cursor-pointer"
+                                        >
+                                            {item}
+                                        </button>
+                                    ) 
+                                    
+                                    : (
+                                        <NavigationMenuLink
+                                            href={`/${item.toLowerCase()}`}
+                                            className="hover:text-primary transition-colors text-[#5A5A5A] font-medium text-[18px] leading-[28px]"
+                                        >
+                                            {item}
+                                        </NavigationMenuLink>
+                                    )}
                                 </NavigationMenuItem>
                             ))}
                         </NavigationMenuList>
@@ -60,7 +98,13 @@ export function SiteHeader() {
 
                 {/* ACTION BUTTON */}
                 <div className="hidden md:block">
-                    <Button type="button" className="w-[200px]">Get Started</Button>
+                    <Button 
+                        type="button" 
+                        className="w-[200px]"
+                        onClick={() => window.open('https://dev.pperfectai.com', '_blank')}
+                    >
+                        Get Started
+                    </Button>
                 </div>
             </div>
         </header>

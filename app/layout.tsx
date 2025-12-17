@@ -27,11 +27,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <SiteHeader />
+        {/* <SiteHeader /> */}
         <main className="pt-[0px] md:pt-[90px]">
           {children}
         </main>
-        <Footer />
+        {/* <Footer /> */}
       </body>
     </html>
   );
