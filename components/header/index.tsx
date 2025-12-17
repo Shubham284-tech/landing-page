@@ -92,6 +92,13 @@ export function SiteHeader() {
                       >
                         {item}
                       </NavigationMenuLink>
+                    ) : item === "Contact Us" ? (
+                      <NavigationMenuLink
+                        href={`/contact-us`}
+                        className="hover:text-primary text-[18px] leading-[28px] font-medium text-[#5A5A5A] transition-colors"
+                      >
+                        {item}
+                      </NavigationMenuLink>
                     ) : (
                       <NavigationMenuLink
                         href={`/${item.toLowerCase()}`}

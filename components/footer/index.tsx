@@ -72,10 +72,10 @@ export default function Footer() {
             >
               Reviews
             </li>
-            <li className="cursor-pointer text-[12px] leading-[unset] font-normal text-white sm:text-[16px] sm:leading-[20px] sm:font-semibold"   onClick={() => router.push("/pricing")}>
+            <li className="cursor-pointer text-[12px] leading-[unset] font-normal text-white sm:text-[16px] sm:leading-[20px] sm:font-semibold" onClick={() => router.push("/pricing")}>
               Pricing
             </li>
-            <li className="cursor-pointer text-[12px] leading-[unset] font-normal text-white sm:text-[16px] sm:leading-[20px] sm:font-semibold">
+            <li className="cursor-pointer text-[12px] leading-[unset] font-normal text-white sm:text-[16px] sm:leading-[20px] sm:font-semibold" onClick={() => router.push("/contact-us")}>
               Contact Us
             </li>
           </ul>

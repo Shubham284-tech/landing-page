@@ -1,7 +1,8 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import Autoplay from "embla-carousel-autoplay"
+import Autoplay from "embla-carousel-autoplay";
+import useEmblaCarousel from "embla-carousel-react";
 import {
   Carousel,
   CarouselContent,
@@ -34,8 +35,13 @@ const faqs = [
 
 export default function Home() {
   const plugin = React.useRef(
-    Autoplay({ delay: 2000, stopOnInteraction: true })
-  )
+    Autoplay({
+      delay: 2000, // time between slide moves (ms)
+      stopOnMouseEnter: true, // stop when user hovers
+      stopOnInteraction: true,
+      playOnInit: true,
+    }),
+  );
   return (
     <>
       <div className="relative min-h-screen overflow-hidden pt-8 before:absolute before:inset-0 before:-z-1 before:h-full before:bg-[url('/assets/img/ic_bg_sales_sec.png')] before:bg-cover before:bg-center before:bg-no-repeat before:content-[''] md:pt-[60px]">
@@ -89,6 +95,12 @@ export default function Home() {
             opts={{
               align: "start",
             }}
+            // plugins={[
+            //   Autoplay({
+            //     delay: 2000,
+            //     stopOnInteraction: true,
+            //   }),
+            // ]}
             plugins={[plugin.current]}
             // orientation="vertical"
             className="w-full"

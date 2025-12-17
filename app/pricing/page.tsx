@@ -100,7 +100,7 @@ const Page = () => {
                           );
                         })}
                         <div className="mt-6 flex justify-center">
-                          <Button className="h-[48px] w-[200px]">
+                          <Button className="h-[48px] w-[200px]" onClick={() => window.open("https://dev.pperfectai.com", "_blank")}>
                             Get Started
                           </Button>
                         </div>
